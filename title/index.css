@@ -1,0 +1,21 @@
+header {
+  background-color: lightgreen;
+}
+
+body {
+  margin: 0;
+}
+
+#top a {
+  color: black;
+  display: flex;
+  text-decoration: none;
+}
+
+#top p {
+  margin: 10px 0;
+}
+
+#content {
+  margin: 20px 0;
+}

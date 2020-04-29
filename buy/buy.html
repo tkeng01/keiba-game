@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>競馬ゲーム</title>
+    <!-- <link rel="icon" href="#"> -->
+    <!-- <meta name="discription" content="#"> -->
+    <link rel="stylesheet" href="../title/index.css">
+    <link rel="stylesheet" href="../buy/buy.css">
+  </head>
+  <header>
+    <div id="top">
+      <a href="../title/index.html">
+        <img src="../photo/main.png" width="40" height="40" alt="#">
+        <p>単勝ゲーム</p>
+      </a>
+    </div>
+  </header>
+  <body>
+    <div id="content">
+      <form name="winner">
+        <p>単勝&nbsp;WinRate</p>
+        <table border="1">
+          <tr>
+            <th>印</th>
+            <th>馬番</th>
+            <th>馬名</th>
+            <th>人気</th>
+            <th>オッズ</th>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="no1" name="rate" value="0"></td>
+            <td>1</td>
+            <td>ダノンプレミアム</td>
+            <td>3人気</td>
+            <td>3.4</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="no2" name="rate" value="1"></td>
+            <td>2</td>
+            <td>アーモンドアイ</td>
+            <td>1人気</td>
+            <td>1.6</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" id="no3" name="rate" value="2"></td>
+            <td>3</td>
+            <td>サートゥルナーリア</td>
+            <td>2人気</td>
+            <td>2.6</td>
+          </tr>
+        </table>
+      </form>
+      <button id="buy" type="submit" form="winner">購入</button>
+      <button id="clear" form="winner">クリア</button>
+      <button id="title">タイトルへ戻る</button>
+    </div>
+    <script type="text/javascript" src="buy.js"></script>
+  </body>
+  <footer>
+  </footer>
+</html>
