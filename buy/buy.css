@@ -1,8 +1,24 @@
+form > p {
+  margin: 10px 0 0;
+}
+
 table {
+  border-color: #696969;
   border-collapse: collapse;
-  margin: 10px 0;
 }
 
 button {
   display: inline-block;
+}
+
+#balance {
+  margin: 10px 0 0 0;
+}
+
+#money {
+  text-align: center;
+  border: 1px solid #696969;
+  width: 100px;
+  margin: 0 0 10px 0;
+  padding: 10px 7px 10px 0;
 }

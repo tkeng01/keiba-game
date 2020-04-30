@@ -1,0 +1,20 @@
+#bord, #explanation {
+  border: 1px solid #696969;
+  border-collapse: collapse;
+  width: 500px;
+}
+
+#bord {
+  height: 20px;
+  margin-bottom: -1px;
+  padding: 5px 0;
+}
+
+#bord p {
+  margin: 0;
+}
+
+#explanation {
+  height: 100px;
+  margin-bottom: 10px;
+}

@@ -18,8 +18,9 @@
   </header>
   <body>
     <div id="content">
-      <form name="winner">
-        <p>単勝&nbsp;WinRate</p>
+      <div>
+        <form name="winner">
+          <p>単勝&nbsp;WinRate</p>
         <table border="1">
           <tr>
             <th>印</th>
@@ -29,28 +30,33 @@
             <th>オッズ</th>
           </tr>
           <tr>
-            <td><input type="checkbox" id="no1" name="rate" value="0"></td>
+            <td><input type="checkbox" id="no1" name="rate" value="1"></td>
             <td>1</td>
             <td>ダノンプレミアム</td>
             <td>3人気</td>
             <td>3.4</td>
           </tr>
           <tr>
-            <td><input type="checkbox" id="no2" name="rate" value="1"></td>
+            <td><input type="checkbox" id="no2" name="rate" value="2"></td>
             <td>2</td>
             <td>アーモンドアイ</td>
             <td>1人気</td>
             <td>1.6</td>
           </tr>
           <tr>
-            <td><input type="checkbox" id="no3" name="rate" value="2"></td>
+            <td><input type="checkbox" id="no3" name="rate" value="3"></td>
             <td>3</td>
             <td>サートゥルナーリア</td>
             <td>2人気</td>
             <td>2.6</td>
           </tr>
         </table>
-      </form>
+        </form>
+      </div>
+      <div>
+        <p id="balance">残金</p>
+        <p id="money">￥10000</p>
+      </div>
       <button id="buy" type="submit" form="winner">購入</button>
       <button id="clear" form="winner">クリア</button>
       <button id="title">タイトルへ戻る</button>
