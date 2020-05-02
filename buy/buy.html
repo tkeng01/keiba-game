@@ -21,45 +21,47 @@
       <div>
         <form name="winner">
           <p>単勝&nbsp;WinRate</p>
-        <table border="1">
-          <tr>
-            <th>印</th>
-            <th>馬番</th>
-            <th>馬名</th>
-            <th>人気</th>
-            <th>オッズ</th>
-          </tr>
-          <tr>
-            <td><input type="checkbox" name="rate" value="1"></td>
-            <td>1</td>
-            <td>ダノンプレミアム</td>
-            <td>3人気</td>
-            <td>9.5</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" name="rate" value="2"></td>
-            <td>2</td>
-            <td>アーモンドアイ</td>
-            <td>1人気</td>
-            <td>1.6</td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" name="rate" value="3"></td>
-            <td>3</td>
-            <td>サートゥルナーリア</td>
-            <td>2人気</td>
-            <td>3.4</td>
-          </tr>
-        </table>
+          <table border="1">
+            <tr>
+              <th>印</th>
+              <th>馬番</th>
+              <th>馬名</th>
+              <th>人気</th>
+              <th>オッズ</th>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="rate" value="1"></td>
+              <td>1</td>
+              <td>ダノンプレミアム</td>
+              <td>3人気</td>
+              <td>9.5</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="rate" value="2"></td>
+              <td>2</td>
+              <td>アーモンドアイ</td>
+              <td>1人気</td>
+              <td>1.6</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" name="rate" value="3"></td>
+              <td>3</td>
+              <td>サートゥルナーリア</td>
+              <td>2人気</td>
+              <td>3.4</td>
+            </tr>
+          </table>
+          <button id="markClear" form="winner">印クリア</button>
+          <div id="calc">
+            <p>金額入力<input type="number" name="bet" min="100"></p>
+            <p id="balance">残金</p>
+            <p id="money"></p>
+          </div>
+          <button id="buy" type="submit" form="winner">購入</button>
+          <button id="betClear" form="winner">金額クリア</button>
+          <button id="title">タイトルへ戻る</button>
         </form>
       </div>
-      <div>
-        <p id="balance">残金</p>
-        <p id="money"></p>
-      </div>
-      <button id="buy" type="submit" form="winner">購入</button>
-      <button id="clear" form="winner">クリア</button>
-      <button id="title">タイトルへ戻る</button>
     </div>
     <script type="text/javascript" src="buy.js"></script>
   </body>

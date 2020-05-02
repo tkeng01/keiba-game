@@ -3,22 +3,30 @@ form > p {
 }
 
 table {
-  border-color: #696969;
+  border-color: #6 96969;
   border-collapse: collapse;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 button {
+  margin: 5px 0;
   display: inline-block;
 }
 
-#balance {
-  margin: 10px 0 0 0;
+#calc p {
+  margin: 0;
+  display: inline-block;
 }
 
 #money {
+  background-color: #fffacd;
   text-align: center;
   border: 1px solid #696969;
   width: 100px;
-  margin: 0 0 10px 0;
-  padding: 10px 7px 10px 0;
+  padding: 5px 7px 5px 0;
 }
