@@ -38,22 +38,27 @@ document.getElementById('buy').onclick = function () {
     // 購入確認
     if(buy == true) {
       let j = 0;
+      let hit = 0;
       for(let k = 0; k < rate.length; k++) {
         if(rate[k].checked == true) {
           money = money - bet;
           if(rate[k].value == number) {
             //当たり処理
-            alert('的中！');
             money = money + (bet * oddz.list[k].value);
+            hit ++;
           } else {
             //ハズレ処理
-            alert('不的中・・・');
             money = money + (bet * 0);
           }
         } else {
           //チェック確認
           j ++;
         }
+      }
+      if(hit == 1) {
+        alert('的中！！');
+      } else {
+        alert('不的中・・・');
       }
     }
   } else {
