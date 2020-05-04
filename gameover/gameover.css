@@ -1,0 +1,13 @@
+#finish {
+  height: 150px;
+  width: 400px;
+  border-radius: 15px;
+  background-color: #f4a460;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  margin: 10px 0;
+}

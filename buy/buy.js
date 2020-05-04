@@ -33,7 +33,7 @@ document.getElementById('buy').onclick = function () {
   let number = Math.round(Math.random() * (rate.length) + 0.5);
   let bet = document.winner.bet.value;
 
-  if (bet % 100 == 0 && bet != 0) {
+  if (bet % 100 == 0 && bet != 0 && bet < money) {
     let buy = confirm('購入しますか?');
     // 購入確認
     if(buy == true) {
@@ -57,6 +57,8 @@ document.getElementById('buy').onclick = function () {
       }
       if(hit == 1) {
         alert('的中！！');
+      } else if(j == rate.length) {
+        alert('買う馬を決めてください');
       } else {
         alert('不的中・・・');
       }
@@ -64,11 +66,17 @@ document.getElementById('buy').onclick = function () {
   } else {
     if(bet < 100) {
       alert('最低100円から購入できます');
+    } else if(bet > money) {
+      alert('賭金が足りません');
     } else {
       alert('100円単位で購入してください');
     }
   }
   document.getElementById('money').textContent = '￥' + money;
+  if(money < 100) {
+    alert('残金がありません。GameOver・・・');
+    location.href = 'file:///E:/js/keiba-game/gameover/gameover.html';
+  }
 }
 
 //金額クリアボタン
@@ -78,5 +86,5 @@ document.getElementById('betClear').onclick = function () {
 
 //タイトルボタン
 document.getElementById('title').onclick = function () {
-  location.href = 'file:///E:/js/keiba-game/title/index.html'
+  location.href = 'file:///E:/js/keiba-game/title/index.html';
 }

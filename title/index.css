@@ -1,5 +1,5 @@
 header {
-  background-color: lightgreen;
+  background-color: #8fbc8f;
 }
 
 body {
@@ -7,7 +7,6 @@ body {
 }
 
 #top a {
-  color: black;
   display: flex;
   text-decoration: none;
 }
