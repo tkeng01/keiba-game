@@ -15,19 +15,70 @@ let oddz = {
   ],
 };
 
+//制限時間
+let minutes;
+let secounds;
+let resetFlag = 0;
+
+function timer() {
+  resetFlag ++;
+  if(resetFlag == 1) {
+    //制限時間(分)を入力
+    minutes = 2;
+    //制限時間(秒)を入力
+    secounds = 59;
+  }
+  secounds --;
+  if(secounds == 0) {
+    minutes --;
+    secounds = 59;
+  }
+
+  //タイムアウト処理
+  if(minutes == -1 && secounds == 59) {
+    minutes =  0;
+    secounds = 0;
+    clearInterval(interval);
+    alert('時間切れ!');
+
+    document.getElementById('result').classList.add('result');
+    document.getElementById('no1').disabled = 'disabled';
+    document.getElementById('no2').disabled = 'disabled';
+    document.getElementById('no3').disabled = 'disabled';
+    document.getElementById('markClear').disabled = 'disabled';
+    document.getElementById('bet').disabled = 'disabled';
+    document.getElementById('buy').disabled = 'disabled';
+    document.getElementById('betClear').disabled = 'disabled';
+    document.getElementById('finish').disabled = 'disabled';
+    document.getElementById('timeOut').textContent = '時間切れ!';
+    document.getElementById('exp').textContent = 'あなたの結果は・・・';
+    document.getElementById('total').textContent = '￥' + money + '\nGet!!';
+
+    const initial = 10000;
+    const diff = money - initial;
+    let sign = '';
+    if (diff > 0) {
+      sign = '+';
+    } 
+    document.getElementById('diff').textContent = '収支は' + sign + '￥' + diff;
+  }
+  document.getElementById('timer').textContent = ('0' + minutes).slice(-2) + ':' + ('0' + secounds).slice(-2); 
+}
+const interval = setInterval(timer, 1000);
+
 //印クリアボタン
-document.getElementById('markClear').onclick = function () {
+document.getElementById('markClear').onclick = function() {
   let rate = document.winner.rate;
   for(let i = 0; i < rate.length; i++) {
     rate[i].checked = false;
   }
 }
   
+//購入
 let money = 10000;
 document.getElementById('money').textContent = '￥' + money;
 
-//購入処理
-document.getElementById('buy').onclick = function () {
+document.getElementById('buy').onclick = function() {
   let rate = document.winner.rate;
   let bet = document.winner.bet.value;
   let BETMIN = 100;
@@ -59,10 +110,14 @@ document.getElementById('buy').onclick = function () {
       }
       if(hit == 1) {
         alert('的中！！');
+        setTimeout(timer, 1000);
+        resetFlag = 0;
       } else if(j == rate.length) {
         alert('買う馬を決めてください');
       } else {
         alert('不的中・・・');
+        setTimeout(timer, 1000);
+        resetFlag = 0;
       }
     }
   } else {
@@ -82,16 +137,23 @@ document.getElementById('buy').onclick = function () {
 }
 
 //金額クリアボタン
-document.getElementById('betClear').onclick = function () {
+document.getElementById('betClear').onclick = function() {
   document.winner.bet.value = null;
 }
 
 //ゲーム終了ボタン
-document.getElementById('finish').onclick = function () {
+document.getElementById('finish').onclick = function() {
+  clearInterval(interval);
+
   document.getElementById('result').classList.add('result');
+  document.getElementById('no1').disabled = 'disabled';
+  document.getElementById('no2').disabled = 'disabled';
+  document.getElementById('no3').disabled = 'disabled';
   document.getElementById('markClear').disabled = 'disabled';
+  document.getElementById('bet').disabled = 'disabled';
   document.getElementById('buy').disabled = 'disabled';
   document.getElementById('betClear').disabled = 'disabled';
+  document.getElementById('finish').disabled = 'disabled';
   document.getElementById('exp').textContent = 'あなたの結果は・・・';
   document.getElementById('total').textContent = '￥' + money + '\nGet!!';
 
@@ -105,6 +167,6 @@ document.getElementById('finish').onclick = function () {
 }
 
 //タイトルボタン
-document.getElementById('title').onclick = function () {
+document.getElementById('title').onclick = function() {
   location.href = 'file:///E:/js/keiba-game/title/index.html';
 }

@@ -23,12 +23,24 @@ button {
   display: inline-block;
 }
 
-#money {
-  background-color: #fffacd;
+#money, #timer{
   text-align: center;
   border: 1px solid #696969;
   width: 100px;
   padding: 5px 7px 5px 0;
+}
+
+#timeLimit, #exp {
+  margin: 0;
+}
+
+#timer {
+  margin: 0;
+  background-color: #b0e0e6;
+}
+
+#money {
+  background-color: #fffacd;
 }
 
 .result {
